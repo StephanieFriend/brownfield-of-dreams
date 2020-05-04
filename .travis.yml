@@ -12,5 +12,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-  app:
+    secure: Z3wLgBGDh+ZX0qZNPRsf8jWnS54thWY83bAlsYCMm+sexAZDQniE1uBu0nMjP++IFRCZ2KpKNo/4uZyq5QiKxyapkCnSWuTMInkfjkBeAqf9/iUcSfuOOlXfeopJVrzqNJURxTEPIMGcmCdZW0pZdExxlMzYEaZJtBSQJAGJdvYsDV4P5PcgI3ePd/Lj0j64WVlk54vcCaTBhR7SZ3CkTV2ZTSajyDkkk72Ud7emJoZCvfdUd+a24jXvge0q3ytFKu/SwrWsj/7q+jkymTPWdZS0ALUc8KradEzMCn+PwnJ0dU/MP6/wiO++d2PsY9br8g/chIayRrPomLajx79dvQClW/XncCzVChnJlcG8bzxlwKPEXA3MeomYqhe39JtEdZ2rMMULyE8ziDcDY9GCTIKTZmjzKVVbsOjMB1R4y4MceHiKdSQBHZsVIs+8Kjf9si5pDJG2aa7PNixEMCbY9K5yEfDvQ+bIAimv1Q0q5hM4ouegX75mct6+n4xnz85J6pb/HsZSkep0cT4dDDVtEP8FCC0koQNwJVUR6W3aIVsZ8PhzMggi86rAz3tczdWFbjFzI4QeAd5ihfxEqQDMs2TvPHsnLON71UeoKTxC1QlTXtsKZ3GpOh8FPSYZjax6xlpQaoMurXf9eSeRFl2tBuZyef2a0iqX67h9+oMbPFw=
+  app: 
+    production: kevin-conster-likes-fields
   run: rails db:migrate
