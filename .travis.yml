@@ -17,4 +17,4 @@ deploy:
   on:
     repo: StephanieFriend/brownfield-of-dreams
   skip_cleanup: 'true'
-  run: rails db:migrate
+  run: rake db:migrate
