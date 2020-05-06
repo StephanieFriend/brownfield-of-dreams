@@ -10,9 +10,14 @@ class User < ApplicationRecord
   has_secure_password
 
   def github_repos(limit = nil)
-   json = GithubService.new.repos(github_username, github_token)
-   repo_objects = json.map {|repo_detail| Repo.new(repo_detail)}
-   limit ? repo_objects.take(limit) : repo_objects
+    json = GithubService.new.repos(github_username, github_token)
+    repo_objects = json.map {|repo_detail| Repo.new(repo_detail)}
+    limit ? repo_objects.take(limit) : repo_objects
+  end
+
+  def github_followers
+    json = GithubService.new.followers(github_username, github_token)
+    json.map {|user_detail| GithubUser.new(user_detail)}
   end
 
 end
