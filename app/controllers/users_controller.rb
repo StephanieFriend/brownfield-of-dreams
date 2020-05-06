@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  def show; end
+  def show
+    if current_user.github_token
+      @repos = current_user.github_repos.map {|repo_detail| Repo.new(repo_detail)}
+    end
+  end
 
   def new
     @user = User.new
