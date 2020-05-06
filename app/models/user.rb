@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   def github_followers
     json = GithubService.new.followers(github_username, github_token)
-    json.map {|follower_detail| Follower.new(follower_detail)}
+    json.map {|user_detail| GithubUser.new(user_detail)}
   end
 
 end
