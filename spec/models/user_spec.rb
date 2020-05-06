@@ -26,4 +26,14 @@ RSpec.describe User, type: :model do
       expect(admin.admin?).to be_truthy
     end
   end
+
+  describe 'instance methods' do
+    it 'github_repos'
+      github_username = 'brian-greeson'
+      token = 
+      user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0)
+      user
+    
+      expect(user.github_repos).to eq(repos)
+  end
 end
