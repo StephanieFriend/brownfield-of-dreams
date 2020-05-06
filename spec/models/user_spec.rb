@@ -37,5 +37,10 @@ RSpec.describe User, type: :model do
       user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0, github_token: ENV['GITHUB_TOKEN'], github_username: ENV['GITHUB_USERNAME'])
       expect(user.github_followers[0].class).to eq(GithubUser)
     end
+
+    it 'github_following' do
+      user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0, github_token: ENV['GITHUB_TOKEN'], github_username: ENV['GITHUB_USERNAME'])
+      expect(user.github_following[0].class).to eq(GithubUser)
+    end
   end
 end
