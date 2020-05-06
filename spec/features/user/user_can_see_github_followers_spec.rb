@@ -9,7 +9,7 @@ describe 'User' do
 
     expect(page).to have_content("Github")
     within("section.github") do
-      expect(page).to have_css("section.followers")
+      expect(page).to have_css("h2.followers")
       expect(page).to have_css("a.follower")
     end
   end
