@@ -16,6 +16,10 @@
       <% @repos.each do |repo| %>
         <%= link_to  repo.name, repo.url, class: 'repo' %>
       <% end %>
+      <h2>Followers</h2>
+        <% @followers.each do |follower| %>
+          <%= link_to follower.name, follower.url, class: 'follower' %>
+        <% end %>
     </section>
   <% end %>
 </section>
