@@ -30,15 +30,12 @@ RSpec.describe User, type: :model do
   describe 'instance methods' do
     it 'github_repos' do     
       user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0, github_token: ENV['GITHUB_TOKEN'], github_username: ENV['GITHUB_USERNAME'])
-      repo_ids = [
-        251626783,
-        247821388,
-        249604857,
-        252760867,
-        225221039
-        ]
-      expect(user.github_repos[0].id).to eq(repo_ids[0])
-      expect(user.github_repos[4].id).to eq(repo_ids[4]) 
+      expect(user.github_repos[0].class).to eq(Repo)
+    end
+
+    it 'github_followers' do     
+      user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0, github_token: ENV['GITHUB_TOKEN'], github_username: ENV['GITHUB_USERNAME'])
+      expect(user.github_followers[0].class).to eq(GithubUser)
     end
   end
 end
