@@ -9,7 +9,10 @@ class User < ApplicationRecord
   enum role: { default: 0, admin: 1 }
   has_secure_password
 
-  def github_repos
-   GithubService.new.repos(github_username, github_token)
+  def github_repos(limit = nil)
+   json = GithubService.new.repos(github_username, github_token)
+   repo_objects = json.map {|repo_detail| Repo.new(repo_detail)}
+   limit ? repo_objects.take(limit) : repo_objects
   end
+
 end

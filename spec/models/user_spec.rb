@@ -37,8 +37,8 @@ RSpec.describe User, type: :model do
         252760867,
         225221039
         ]
-      expect(user.github_repos[0][:id]).to eq(repo_ids[0])
-      expect(user.github_repos[4][:id]).to eq(repo_ids[4]) 
+      expect(user.github_repos[0].id).to eq(repo_ids[0])
+      expect(user.github_repos[4].id).to eq(repo_ids[4]) 
     end
   end
 end
