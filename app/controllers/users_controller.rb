@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   def show
-    if current_user.github_token
-      @repos = current_user.github_repos(5)
-      @followers = current_user.github_followers
-    end
+
   end
 
   def new
