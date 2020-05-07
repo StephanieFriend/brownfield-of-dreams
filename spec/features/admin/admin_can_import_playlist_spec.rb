@@ -9,7 +9,7 @@ feature "An admin visiting /tutorials/new" do
 
     visit "/admin/tutorials/new"
 
-    click_link("Import YouTube Playlist")
+    click_on("Import YouTube Playlist")
 
     fill_in "Playlist Id", with: "PL1cFDQFVTgsqO-7pdYHib9u1Cm9t_JsGP"
 
