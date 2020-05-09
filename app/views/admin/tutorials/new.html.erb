@@ -1,4 +1,5 @@
 <h2>New Tutorial</h2>
+<h3><%= link_to "Import Youtube Playlist", admin_import_playlist_path %></h3>
 <%= form_for [:admin, @tutorial] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, class: "block col-4 field" %>
@@ -9,10 +10,11 @@
 
   <h3>Videos</h3>
 
-  <%= f.fields_for :videos do |builder| %>
-    <%= f.label :youtube_url %>
-    <%= f.text_field :video_id, class: "block col-4 field" %>
+  <%= f.fields_for :videos do |ff| %>
+    <%= ff.label :youtube_url %>
+    <%= ff.text_field :video_id, class: "block col-4 field" %>
   <% end %>
 
   <%= f.submit "Save", class: "mt2 btn btn-primary mb1 bg-teal"  %>
+
 <% end %>
