@@ -3,7 +3,6 @@ class Tutorial < ApplicationRecord
   acts_as_taggable_on :tags, :tag_list
   accepts_nested_attributes_for :videos
 
-
   def import
     service = YoutubeService.new
     playlist = service.playlist_info(playlist_id)
@@ -11,6 +10,7 @@ class Tutorial < ApplicationRecord
     self.title = playlist[:items].first[:snippet][:title]
     self.description = playlist[:items].first[:snippet][:description]
     self.thumbnail = playlist[:items].first[:snippet][:thumbnails][:high][:url]
+    
     playlist_videos = service.playlist_videos(playlist_id)
     playlist_videos.each do |playlist_video| 
       video_info = service.video_info(playlist_video[:contentDetails][:videoId])

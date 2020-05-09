@@ -15,7 +15,6 @@ class Admin::TutorialsController < Admin::BaseController
       tutorial.save
               
       flash[:success] = "Successfully created tutorial. #{view_context.link_to('View it here', tutorial_path(tutorial.id))}."
-      # flash[:success] = 'Successfully created Playlist. View it here' "i'm a typing person, i type things, look at me type. did you post it???? ?? ?? ?? "
       rescue StandardError 
         flash[:error] = 'Unable to create playlist.'  
     end
