@@ -3,11 +3,23 @@ class Admin::TutorialsController < Admin::BaseController
     @tutorial = Tutorial.find(params[:id])
   end
 
+  def import
+     @tutorial = Tutorial.new
+  end
+
   def create
     begin
-      Tutorial.new(tutorial_params)
+      tutorial = Tutorial.new(tutorial_params)
+      tutorial.import if tutorial.playlist_id
+    
+      tutorial.save
+              
+      flash[:success] = "Successfully created tutorial. #{view_context.link_to('View it here', tutorial_path(tutorial.id))}."
+      # flash[:success] = 'Successfully created Playlist. View it here' "i'm a typing person, i type things, look at me type. did you post it???? ?? ?? ?? "
+      rescue StandardError 
+        flash[:error] = 'Unable to create playlist.'  
     end
-    binding.pry
+    redirect_to admin_dashboard_path
   end
 
   def new
@@ -32,6 +44,6 @@ class Admin::TutorialsController < Admin::BaseController
   private
 
   def tutorial_params
-    params.require(:tutorial).permit(:title, :discription, :thumbnail, :playlist_id)
+    params.require(:tutorial).permit(:tag_list, :playlist_id)
   end
 end
