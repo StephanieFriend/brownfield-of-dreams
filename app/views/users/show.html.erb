@@ -33,5 +33,7 @@
         <% end %>
       </ul>
     </section>
+  <% else %>
+    <%= button_to "Connect To Github", "/auth/github", class: "mt2 btn btn-primary mb1 bg-teal" %>
   <% end %>
 </section>
