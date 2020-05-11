@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @tutorial_videos = Video.list_bookmarks
   end
 
   def new

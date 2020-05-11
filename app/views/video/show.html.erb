@@ -1,5 +1,36 @@
 <main class="video-container">
+  <h3><%= @presenter.title %></h3>
+
   <div class="video-view">
-    <iframe src= <%="https://www.youtube.com/embed/#{@presenter.current_video}" %>  width="450" height="300"></iframe>
+    <iframe src= <%="https://www.youtube.com/embed/#{@presenter.video_id}" %>  width="450" height="300"></iframe>
+    <div id="player">
+      <script src="https://www.youtube.com/player_api"></script>
+      <script>
+          // create youtube player
+          var player;
+          var position;
+          function onYouTubePlayerAPIReady() {
+              player = new YT.Player('player', {
+                  width: '640',
+                  height: '390',
+                  videoId: '<%= @presenter.video_id %>',
+                  events: {
+                      onReady: onPlayerReady,
+                      onStateChange: onPlayerStateChange
+                  }
+              });
+          }
+          // autoplay video
+          function onPlayerReady(event) {
+              event.target.playVideo();
+          }
+      </script>
+    </div>
+
+    <h4>Description</h4>
+    <p data-controller="tutorials" id="description-<%= @presenter.id %>">
+      <%= @presenter.description.truncate(50) %>...
+      <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.id, class: "show-link"%>
+    </p>
   </div>
 </main>

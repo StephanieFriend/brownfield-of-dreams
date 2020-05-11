@@ -9,6 +9,19 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
+    <% @tutorial_videos.each do |tutorial_title, videos| %>
+      <section class="tutorial-<%= tutorial_title.delete(" ") %>">
+      <h3><%= tutorial_title %></h3>
+      <% videos.each do |video| %>
+        <section class="video-<%= video.id %>">
+        <% if video.bookmark %>
+          <%= link_to video.title, "/videos/#{video.id}" %>
+          <br/>
+        <% end %>
+      <% end %>
+        </section>
+      </section>
+    <% end %>
   </section>
   <% if current_user.github_token %>
     <section class="github">
