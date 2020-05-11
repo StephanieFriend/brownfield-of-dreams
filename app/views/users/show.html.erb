@@ -9,17 +9,15 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
-    <% @tutorial_video.each do |tutorial, video| %>
-      <% if video.any? { |vid| vid.bookmark } %>
+    <% @tutorial_videos.each do |tutorial, videos| %>
         <h3><%= tutorial %></h3>
-        <% video.each do |video_info| %>
-          <% if video_info.bookmark %>
-            <%= link_to video_info.title, "/videos/#{video_info.id}" %>
+        <% videos.each do |video| %>
+          <% if video.bookmark %>
+            <%= link_to video.title, "/videos/#{video.id}" %>
             <br/>
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
   </section>
   <% if current_user.github_token %>
     <section class="github">
