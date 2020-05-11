@@ -24,4 +24,7 @@ class Tutorial < ApplicationRecord
     end
   end
 
+  def self.public_tutorials
+    where(classroom: false)
+  end
 end
