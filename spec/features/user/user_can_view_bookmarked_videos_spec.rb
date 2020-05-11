@@ -20,16 +20,17 @@ describe 'A registered user' do
 
     visit '/dashboard'
 
-    # within(".tutorial-#{tutorial1.title}") do
-    #   expect(page).to have_content(video1.title)
-    #   expect(page).to have_no_content(video2.title)
-    # end
-    #
-    # within(".tutorial-#{tutorial2.title}") do
-    #   expect(page).to have_content(video2.title)
-    #   expect(page).to have_no_content(video1.title)
-    # end
+    within ".tutorial-#{tutorial1.title.delete(" ")}" do
+      expect(page).to have_content(video1.title)
+      expect(page).to have_no_content(video2.title)
+    end
+
+    within ".tutorial-#{tutorial2.title.delete(" ")}" do
+      expect(page).to have_content(video2.title)
+      expect(page).to have_no_content(video1.title)
+    end
   end
+
   it 'cannot see playlist name if no videos are bookmarked' do
     tutorial1= create(:tutorial, title: "How to Tie Your Shoes")
     video1 = create(:video, title: "The Bunny Ears Technique", tutorial: tutorial1)
