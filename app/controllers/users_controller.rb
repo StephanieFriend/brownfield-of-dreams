@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def show
-    videos = Video.all
-    @tutorial_video = videos.group_by { |video| video.tutorial.title }
+    @tutorial_videos = Video.list_bookmarks
   end
 
   def new
