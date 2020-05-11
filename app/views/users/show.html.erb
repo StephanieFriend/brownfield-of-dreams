@@ -9,9 +9,9 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
-    <% @tutorial_videos.each do |tutorial, videos| %>
-      <section class="tutorial-<%= tutorial %>">
-      <h3><%= tutorial %></h3>
+    <% @tutorial_videos.each do |tutorial_title, videos| %>
+      <section class="tutorial-<%= tutorial_title.delete(" ") %>">
+      <h3><%= tutorial_title %></h3>
       <% videos.each do |video| %>
         <section class="video-<%= video.id %>">
         <% if video.bookmark %>
