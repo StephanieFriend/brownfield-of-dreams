@@ -11,7 +11,6 @@ class Admin::TutorialsController < Admin::BaseController
     begin
       tutorial = Tutorial.new(tutorial_params)
       tutorial.import if tutorial.playlist_id
-      binding.pry
       tutorial.save
 
       flash[:success] = "Successfully created tutorial. #{view_context.link_to('View it here', tutorial_path(tutorial.id))}."
