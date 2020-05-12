@@ -11,9 +11,9 @@ class Admin::TutorialsController < Admin::BaseController
     begin
       tutorial = Tutorial.new(tutorial_params)
       tutorial.import if tutorial.playlist_id
-    
+      binding.pry
       tutorial.save
-              
+
       flash[:success] = "Successfully created tutorial. #{view_context.link_to('View it here', tutorial_path(tutorial.id))}."
       rescue StandardError 
         flash[:error] = 'Unable to create playlist.'  
@@ -23,7 +23,6 @@ class Admin::TutorialsController < Admin::BaseController
 
   def new
     @tutorial = Tutorial.new
-    @tutorial.videos.build
   end
 
   def update
@@ -43,6 +42,6 @@ class Admin::TutorialsController < Admin::BaseController
   private
 
   def tutorial_params
-    params.require(:tutorial).permit(:tag_list, :playlist_id)
+    params.require(:tutorial).permit(:tag_list, :playlist_id, :title, :description, :thumbnail)
   end
 end
