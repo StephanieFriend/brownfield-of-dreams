@@ -1,6 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Tutorial, type: :model do
+  
+  describe 'Destroying tutorial' do
+    it 'destroys videos' do
+      tutorial1= create(:tutorial, title: "How to Tie Your Shoes")
+      video1 = create(:video, title: "The Bunny Ears Technique", tutorial: tutorial1)
+      
+      expect(Video.all).to include(video1)
+      
+      tutorial1.destroy
+
+      expect(Video.all).to_not include(video1)
+    end
+  end
 
   describe 'instance methods' do
     it 'import' do
