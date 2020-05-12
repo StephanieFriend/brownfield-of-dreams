@@ -10,20 +10,22 @@
   <section>
     <h1>Bookmarked Segments</h1>
     <% @tutorial_videos.each do |tutorial_title, videos| %>
-      <section class="tutorial-<%= tutorial_title.delete(" ") %>">
-      <h3><%= tutorial_title %></h3>
-      <% videos.each do |video| %>
-        <section class="video-<%= video.id %>">
-        <% if video.bookmark %>
-          <%= link_to video.title, "/videos/#{video.id}" %>
-          <br/>
+      <% if current_user.id == videos.first.users.first.id %>
+        <section class="tutorial-<%= tutorial_title.delete(" ") %>">
+        <h3><%= tutorial_title %></h3>
+        <% videos.each do |video| %>
+          <section class="video-<%= video.id %>">
+          <% if video.bookmark %>
+            <%= link_to video.title, "/videos/#{video.id}" %>
+            <br/>
+          <% end %>
         <% end %>
-      <% end %>
         </section>
       </section>
+      <% end %>
     <% end %>
   </section>
-  <% if current_user.github_token %>
+  <% if current_user.github_token && !current_user.admin? %>
     <section class="github">
       <h1>Github</h1>
       <ul>
@@ -46,7 +48,7 @@
         <% end %>
       </ul>
     </section>
-  <% else %>
+  <% elsif !current_user.admin? %>
     <%= button_to "Connect To Github", "/auth/github", class: "mt2 btn btn-primary mb1 bg-teal" %>
   <% end %>
 </section>
