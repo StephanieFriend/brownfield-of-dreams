@@ -13,6 +13,15 @@ describe "An Admin can edit a tutorial" do
 
     fill_in "video[title]", with: "How to tie your shoes."
     fill_in "video[description]", with: "Over, under, around and through, Meet Mr. Bunny Rabbit, pull and through."
+    fill_in "video[video_id]", with: ""
+    click_on "Create Video"
+
+    expect(page).to have_content("Unable to create video.")
+
+    click_on "Add Video"
+
+    fill_in "video[title]", with: "How to tie your shoes."
+    fill_in "video[description]", with: "Over, under, around and through, Meet Mr. Bunny Rabbit, pull and through."
     fill_in "video[video_id]", with: "J7ikFUlkP_k"
     click_on "Create Video"
 
