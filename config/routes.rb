@@ -37,7 +37,8 @@ Rails.application.routes.draw do
   get '/video', to: 'video#show'
 
   get "/auth/:provider/callback" => "github_sessions#create"
-  get "/signout" => "github_sessions#destroy", :as => :signout
+  get "/auth/failure", to: "github_sessions#create"
+  get "/signout" => "sessions_controller#destroy", :as => :signout
 
   resources :friendships, only: [:create]
   resources :users, only: [:new, :create, :update, :edit]
