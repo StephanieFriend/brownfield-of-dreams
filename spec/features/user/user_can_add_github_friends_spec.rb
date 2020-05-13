@@ -28,12 +28,10 @@ describe 'As a user', :vcr do
 
   it 'I can click a button to add a friend' do
     visit dashboard_path
-    expect(@stephanie.friends).to eq([])
 
     within(".follow-#{@brian.github_username}") do
       click_button('Add as Friend')
     end
-    expect(@stephanie.friends).to include(@brian)
 
     visit dashboard_path
 
