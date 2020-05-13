@@ -13,9 +13,9 @@ class UserVideosController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-  def show
-    @video = Video.find(params[:video_id])
-  end
+  # def show
+  #   @video = Video.find(params[:video_id])
+  # end
 
   private
 
