@@ -7,7 +7,7 @@ describe 'As a user', :vcr do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stephanie)
   end
-  after(:each) do
+  after(:all) do
     User.destroy_all
   end
   it 'I can see a button to add friend if they are registered on this site' do
