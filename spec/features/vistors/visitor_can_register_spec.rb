@@ -34,28 +34,28 @@ describe 'vister can create an account', :js do
     expect(page).to_not have_content('Sign In')
   end
 
-  # it 'visitor cannot register if username already exists' do
-  #   bob = User.create(email: "bob@example.com", first_name: "Bob", last_name: "Smith", password: "123")
-  #
-  #   email = 'bob@example.com'
-  #   first_name = 'Jim'
-  #   last_name = 'Bob'
-  #   password = 'password'
-  #   password_confirmation = 'password'
-  #
-  #   visit '/'
-  #
-  #   click_on 'Register'
-  #
-  #   fill_in 'user[email]', with: email
-  #   fill_in 'user[first_name]', with: first_name
-  #   fill_in 'user[last_name]', with: last_name
-  #   fill_in 'user[password]', with: password
-  #   fill_in 'user[password_confirmation]', with: password
-  #
-  #   click_on'Create Account'
-  #
-  #   expect(page).to have_content('Username already exists')
-  #   expect(current_path).to eq(new_user_path)
-  # end
+  it 'visitor cannot register if username already exists' do
+    bob = User.create(email: "bob@example.com", first_name: "Bob", last_name: "Smith", password: "123")
+  
+    email = 'bob@example.com'
+    first_name = 'Jim'
+    last_name = 'Bob'
+    password = 'password'
+    password_confirmation = 'password'
+  
+    visit '/'
+  
+    click_on 'Register'
+  
+    fill_in 'user[email]', with: email
+    fill_in 'user[first_name]', with: first_name
+    fill_in 'user[last_name]', with: last_name
+    fill_in 'user[password]', with: password
+    fill_in 'user[password_confirmation]', with: password
+  
+    click_on'Create Account'
+  
+    expect(page).to have_content('Username already exists')
+   
+  end
 end
