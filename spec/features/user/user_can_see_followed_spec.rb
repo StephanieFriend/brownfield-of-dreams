@@ -9,8 +9,8 @@ describe 'User', :vcr do
 
     expect(page).to have_content("Github")
     within("section.github") do
-      expect(page).to have_css("h2.following")
-      expect(page).to have_css("a.following")
+      expect(page).to have_css(".following")
+      expect(page).to have_css(".following")
     end
   end
   
@@ -20,6 +20,6 @@ describe 'User', :vcr do
 
     visit dashboard_path
 
-    expect(page).to_not have_css("h2.following")
+    expect(page).to_not have_css(".following")
   end
 end

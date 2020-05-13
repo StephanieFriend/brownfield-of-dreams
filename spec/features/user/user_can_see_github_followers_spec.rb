@@ -9,8 +9,8 @@ describe 'User', :vcr do
 
     expect(page).to have_content("Github")
     within("section.github") do
-      expect(page).to have_css("h2.followers")
-      expect(page).to have_css("a.follower")
+      expect(page).to have_css(".followers")
+      expect(page).to have_css(".follower")
     end
   end
   
