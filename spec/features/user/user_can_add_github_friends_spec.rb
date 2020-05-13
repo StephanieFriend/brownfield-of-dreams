@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'As a user', :vcr do
   before(:each) do
-    @stephanie = create(:user, github_token: ENV['GITHUB_TOKEN'], github_username: ENV['GITHUB_USERNAME'])
-    @brian = create(:user, github_token: ENV['GITHUB_TOKEN2'], github_username: ENV['GITHUB_USERNAME2'])
+    @stephanie = create(:user, first_name: "steph", github_token: ENV['GITHUB_TOKEN'], github_username: ENV['GITHUB_USERNAME'])
+    @brian = create(:user, first_name: "brian", github_token: ENV['GITHUB_TOKEN2'], github_username: ENV['GITHUB_USERNAME2'])
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@stephanie)
   end
