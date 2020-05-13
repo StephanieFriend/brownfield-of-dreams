@@ -28,10 +28,7 @@ class User < ApplicationRecord
     json.map {|user_detail| GithubUser.new(user_detail)}
   end
 
-  def friend_user?(github_user)
-    user = User.find_by(github_username: github_user.name)
-    return false if user.nil?
-
-    friends.exclude?(user)
+  def friendable_user?(github_user)
+    friends.exclude?(User.find_by(github_username: github_user.name))
   end
 end
