@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "github_sessions#create"
   get "/signout" => "github_sessions#destroy", :as => :signout
 
+  resources :friendships, only: [:create]
   resources :users, only: [:new, :create, :update, :edit]
 
   resources :tutorials, only: [:show, :index] do

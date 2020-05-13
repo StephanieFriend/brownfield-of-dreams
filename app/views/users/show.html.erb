@@ -7,6 +7,16 @@
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
+  <section class="friends">
+    <h1>Friends</h1>
+    <ul>
+      <% current_user.friends.each do |friend| %>
+        <li class="friend-<%= friend.github_username %>">
+          <%= friend.github_username %>
+        </li>
+    <% end %>
+    </ul>
+  </section>
   <section>
     <h1>Bookmarked Segments</h1>
     <% @tutorial_videos.each do |tutorial_title, videos| %>
@@ -33,20 +43,34 @@
           <li><%= link_to  repo.name, repo.url, class: 'repo' %></li>
         <% end %>
       </ul>
-      
-      <h2 class="followers">Followers</h2>
+
+      <section class="followers">
+      <h2>Followers</h2>
       <ul>
         <% current_user.github_followers.each do |follower| %>
-          <li><%= link_to follower.name, follower.url, class: 'follower' %></li>
+          <section class="follower-<%= follower.name %>">
+          <li><%= link_to follower.name, follower.url, class: 'follower' %>
+            <% if current_user.friendable_user?(follower) %>
+              <%= button_to 'Add as Friend', friendships_path(github_username: follower.name), method: :post %> </li>
+            <% end %>
+            </section>
         <% end %>
       </ul>
-      
-      <h2 class="following">Following</h2>
+      </section>
+
+      <section class="following">
+      <h2>Following</h2>
       <ul>
         <% current_user.github_following.each do |followed| %>
-          <li><%= link_to followed.name, followed.url, class: 'following' %></li>
+          <section class="follow-<%= followed.name %>">
+          <li><%= link_to followed.name, followed.url, class: 'btn-following' %>
+            <% if current_user.friendable_user?(followed) %>
+              <%= button_to 'Add as Friend', friendships_path(github_username: followed.name), method: :post %> </li>
+            <% end %>
+            </section>
         <% end %>
       </ul>
+      </section>
     </section>
   <% elsif !current_user.admin? %>
     <%= button_to "Connect To Github", "/auth/github", class: "mt2 btn btn-primary mb1 bg-teal" %>

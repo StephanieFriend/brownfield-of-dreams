@@ -25,7 +25,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 12 May 2020 22:59:44 GMT
+      - Wed, 13 May 2020 17:47:03 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -37,9 +37,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
@@ -55,7 +55,7 @@ http_interactions:
           "items": []
         }
     http_version: null
-  recorded_at: Tue, 12 May 2020 22:59:40 GMT
+  recorded_at: Wed, 13 May 2020 17:47:04 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/playlists?id=PL1cFDQFVTgspB01PHMDMM0U9Ckm7_mNa3&key=<YOUTUBE_API_KEY>&part=id,contentDetails,snippet
@@ -81,7 +81,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 12 May 2020 22:59:44 GMT
+      - Wed, 13 May 2020 17:47:04 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -93,9 +93,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
@@ -148,7 +148,7 @@ http_interactions:
           ]
         }
     http_version: null
-  recorded_at: Tue, 12 May 2020 22:59:41 GMT
+  recorded_at: Wed, 13 May 2020 17:47:04 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<YOUTUBE_API_KEY>&part=id,contentDetails&playlistId=PL1cFDQFVTgspB01PHMDMM0U9Ckm7_mNa3
@@ -174,7 +174,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 12 May 2020 22:59:44 GMT
+      - Wed, 13 May 2020 17:47:04 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -186,9 +186,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
@@ -214,7 +214,7 @@ http_interactions:
           }
         }
     http_version: null
-  recorded_at: Tue, 12 May 2020 22:59:41 GMT
+  recorded_at: Wed, 13 May 2020 17:47:04 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/videos?id=Wd-ECuaSIEg&key=<YOUTUBE_API_KEY>&part=snippet,contentDetails,statistics
@@ -240,7 +240,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 12 May 2020 22:59:44 GMT
+      - Wed, 13 May 2020 17:47:04 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -252,9 +252,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q049=":443";
-        ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
@@ -262,11 +262,11 @@ http_interactions:
       string: |
         {
           "kind": "youtube#videoListResponse",
-          "etag": "vXBlVxjes7erHyHAbvKOsitkGoI",
+          "etag": "OrJRblIjwhULfRp_hbqGzG1-nQo",
           "items": [
             {
               "kind": "youtube#video",
-              "etag": "Lp7nHlsDl-fgsJiAi1JUoncTpUI",
+              "etag": "0-GBs-rTs9MLd4rhAAvJDtL9WZM",
               "id": "Wd-ECuaSIEg",
               "snippet": {
                 "publishedAt": "2007-07-25T00:20:52Z",
@@ -317,7 +317,7 @@ http_interactions:
                 "projection": "rectangular"
               },
               "statistics": {
-                "viewCount": "41943",
+                "viewCount": "41944",
                 "likeCount": "246",
                 "dislikeCount": "11",
                 "favoriteCount": "0",
@@ -331,5 +331,5 @@ http_interactions:
           }
         }
     http_version: null
-  recorded_at: Tue, 12 May 2020 22:59:41 GMT
+  recorded_at: Wed, 13 May 2020 17:47:04 GMT
 recorded_with: VCR 5.1.0
