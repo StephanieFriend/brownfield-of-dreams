@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_many :user_videos, dependent: :destroy
   has_many :videos, through: :user_videos
 
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
+
   validates :email, uniqueness: true, presence: true
   validates :password, presence: true, if: :password
   validates :first_name, presence: true
@@ -25,4 +28,10 @@ class User < ApplicationRecord
     json.map {|user_detail| GithubUser.new(user_detail)}
   end
 
+  def friend_user?(github_user)
+    user = User.find_by(github_username: github_user.name)
+    return false if user.nil?
+
+    friends.exclude?(user)
+  end
 end
