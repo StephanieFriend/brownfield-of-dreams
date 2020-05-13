@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_223542) do
+ActiveRecord::Schema.define(version: 2020_05_13_040421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "friend_id"
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
@@ -69,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_223542) do
     t.datetime "updated_at", null: false
     t.string "github_token"
     t.string "github_username"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email"
   end
 
@@ -83,6 +91,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_223542) do
     t.index ["tutorial_id"], name: "index_videos_on_tutorial_id"
   end
 
+  add_foreign_key "friendships", "users"
   add_foreign_key "user_videos", "users"
   add_foreign_key "user_videos", "videos"
 end
