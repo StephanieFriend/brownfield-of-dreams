@@ -46,4 +46,5 @@ VCR.configure do |config|
   config.filter_sensitive_data('<YOUTUBE_API_KEY>') { ENV['YOUTUBE_API_KEY'] }
   config.configure_rspec_metadata!
   config.ignore_localhost = true
+  config.ignore_host("chromedriver.storage.googleapis.com")
 end
