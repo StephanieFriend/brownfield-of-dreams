@@ -1,0 +1,335 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlists?id=$$cash_money$$&key=<YOUTUBE_API_KEY>&part=id,contentDetails,snippet
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Wed, 13 May 2020 17:47:03 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#playlistListResponse",
+          "etag": "k7C9z_jcF5xa02AMD6Ny6hy8tDs",
+          "pageInfo": {
+            "totalResults": 0,
+            "resultsPerPage": 5
+          },
+          "items": []
+        }
+    http_version: null
+  recorded_at: Wed, 13 May 2020 17:47:04 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlists?id=PL1cFDQFVTgspB01PHMDMM0U9Ckm7_mNa3&key=<YOUTUBE_API_KEY>&part=id,contentDetails,snippet
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Wed, 13 May 2020 17:47:04 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#playlistListResponse",
+          "etag": "xR-WAj47SPvcx2PUZeuNJe5ONmg",
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+          },
+          "items": [
+            {
+              "kind": "youtube#playlist",
+              "etag": "uN8PQK2B94duPwi0F7Brdi2VYyM",
+              "id": "PL1cFDQFVTgspB01PHMDMM0U9Ckm7_mNa3",
+              "snippet": {
+                "publishedAt": "2020-05-09T21:41:24Z",
+                "channelId": "UCrU1jP7jxsxg_G1PeXfjQ1w",
+                "title": "hamburger",
+                "description": "",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/Wd-ECuaSIEg/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/Wd-ECuaSIEg/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/Wd-ECuaSIEg/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "Brian Greeson",
+                "localized": {
+                  "title": "hamburger",
+                  "description": ""
+                }
+              },
+              "contentDetails": {
+                "itemCount": 1
+              }
+            }
+          ]
+        }
+    http_version: null
+  recorded_at: Wed, 13 May 2020 17:47:04 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<YOUTUBE_API_KEY>&part=id,contentDetails&playlistId=PL1cFDQFVTgspB01PHMDMM0U9Ckm7_mNa3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Wed, 13 May 2020 17:47:04 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#playlistItemListResponse",
+          "etag": "BWDUP1i8Y_fX5fHcqRnXjMwpLV4",
+          "items": [
+            {
+              "kind": "youtube#playlistItem",
+              "etag": "Q6Yg5GrtFt1Cf9s1bmqlyB6TKv8",
+              "id": "UEwxY0ZEUUZWVGdzcEIwMVBITURNTTBVOUNrbTdfbU5hMy41NkI0NEY2RDEwNTU3Q0M2",
+              "contentDetails": {
+                "videoId": "Wd-ECuaSIEg",
+                "videoPublishedAt": "2007-07-25T00:20:52Z"
+              }
+            }
+          ],
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+          }
+        }
+    http_version: null
+  recorded_at: Wed, 13 May 2020 17:47:04 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=Wd-ECuaSIEg&key=<YOUTUBE_API_KEY>&part=snippet,contentDetails,statistics
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Wed, 13 May 2020 17:47:04 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#videoListResponse",
+          "etag": "OrJRblIjwhULfRp_hbqGzG1-nQo",
+          "items": [
+            {
+              "kind": "youtube#video",
+              "etag": "0-GBs-rTs9MLd4rhAAvJDtL9WZM",
+              "id": "Wd-ECuaSIEg",
+              "snippet": {
+                "publishedAt": "2007-07-25T00:20:52Z",
+                "channelId": "UC9lDKlMc5zeXBny5uxBXpgA",
+                "title": "You're a Hamburger",
+                "description": "You're a hamburger. You better face up to the facts. \r\n\r\nA short animation to the song 'You're a Hamburger' by the Vestibules. \r\n\r\nMade by me because I have too much time on my hands...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/Wd-ECuaSIEg/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/Wd-ECuaSIEg/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/Wd-ECuaSIEg/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "ehn",
+                "tags": [
+                  "You're",
+                  "Hamburger",
+                  "Vestibules",
+                  "song",
+                  "animation",
+                  "dancing",
+                  "hamburger"
+                ],
+                "categoryId": "24",
+                "liveBroadcastContent": "none",
+                "localized": {
+                  "title": "You're a Hamburger",
+                  "description": "You're a hamburger. You better face up to the facts. \r\n\r\nA short animation to the song 'You're a Hamburger' by the Vestibules. \r\n\r\nMade by me because I have too much time on my hands..."
+                }
+              },
+              "contentDetails": {
+                "duration": "PT1M41S",
+                "dimension": "2d",
+                "definition": "sd",
+                "caption": "false",
+                "licensedContent": false,
+                "contentRating": {},
+                "projection": "rectangular"
+              },
+              "statistics": {
+                "viewCount": "41944",
+                "likeCount": "246",
+                "dislikeCount": "11",
+                "favoriteCount": "0",
+                "commentCount": "41"
+              }
+            }
+          ],
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 1
+          }
+        }
+    http_version: null
+  recorded_at: Wed, 13 May 2020 17:47:04 GMT
+recorded_with: VCR 5.1.0
