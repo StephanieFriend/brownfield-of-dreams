@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "An admin visiting /tutorials/new" do
+feature "An admin visiting /tutorials/new", :vcr do
   scenario "can click a link to import playlist" do
     admin = create(:admin)
     create_list(:tutorial, 2)
