@@ -48,3 +48,6 @@ VCR.configure do |config|
   config.ignore_localhost = true
   config.ignore_host("chromedriver.storage.googleapis.com")
 end
+OmniAuth.config.on_failure = Proc.new { |env|
+  OmniAuth::FailureEndpoint.new(env).redirect_to_failure
+}
