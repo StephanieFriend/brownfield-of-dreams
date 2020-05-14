@@ -28,6 +28,10 @@ RSpec.describe User, type: :model do
   end
 
   describe 'instance methods', :vcr do
+    after(:all) do
+      User.destroy_all
+    end
+
     it 'github_repos' do     
       user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0, github_token: ENV['GITHUB_TOKEN'], github_username: ENV['GITHUB_USERNAME'])
       expect(user.github_repos[0].class).to eq(Repo)
