@@ -1,5 +1,4 @@
 class Admin::VideosController < Admin::BaseController
-
   def create
     begin
       tutorial = Tutorial.find(params[:tutorial_id])

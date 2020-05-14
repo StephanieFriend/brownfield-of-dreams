@@ -17,7 +17,7 @@ class GithubService
   private
 
   def conn(username, token)
-    Faraday.new(url: 'https://api.github.com') do |req| 
+    Faraday.new(url: 'https://api.github.com') do |req|
       req.basic_auth(username, token)
     end
   end

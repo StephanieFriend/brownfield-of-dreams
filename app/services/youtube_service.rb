@@ -6,19 +6,20 @@ class YoutubeService
   end
 
   def playlist_info(id)
-    params = {part: 'id,contentDetails,snippet', id: id}
+    params = { part: 'id,contentDetails,snippet', id: id }
 
     get_json('youtube/v3/playlists', params)
   end
 
   def playlist_videos(id)
-    params = {part: 'id,contentDetails', playlistId: id}
+    params = { part: 'id,contentDetails', playlistId: id }
     response = get_json('youtube/v3/playlistItems', params)
     videos = response[:items]
     while response[:nextPageToken]
-      params = {part: 'id,contentDetails', playlistId: id, pageToken: response[:nextPageToken]}
+      params = { part: 'id,contentDetails', playlistId: id,
+                 pageToken: response[:nextPageToken] }
       response = get_json('youtube/v3/playlistItems', params)
-      videos  += response[:items] 
+      videos  += response[:items]
     end
     videos
   end

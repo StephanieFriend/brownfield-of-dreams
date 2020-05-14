@@ -4,7 +4,8 @@ class Video < ApplicationRecord
   belongs_to :tutorial
 
   def self.list_bookmarks
-    tutorial_videos = joins(:tutorial).where("videos.bookmark =?", true).order(:tutorial_id).order(:position)
+    tutorial_videos = joins(:tutorial).where('videos.bookmark =?', true)
+                                      .order(:tutorial_id).order(:position)
     tutorial_videos.group_by { |video| video.tutorial.title }
   end
 end
