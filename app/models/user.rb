@@ -29,6 +29,7 @@ class User < ApplicationRecord
   end
 
   def friendable_user?(github_user)
-    friends.exclude?(User.find_by(github_username: github_user.name))
+    return false unless user_to_friend = User.find_by(github_username: github_user.name)
+    friends.exclude?(user_to_friend) 
   end
 end

@@ -12,7 +12,7 @@ describe 'As a user', :vcr do
   end
   it 'I can see a button to add friend if they are registered on this site' do
     visit dashboard_path
-
+    
     within('.followers') do
       within(".follower-#{@brian.github_username}") do
         expect(page).to have_button('Add as Friend')

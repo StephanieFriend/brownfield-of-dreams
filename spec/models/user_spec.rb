@@ -39,19 +39,20 @@ RSpec.describe User, type: :model do
     end
 
     it 'github_following' do
-      # response_body = File.read('spec/fixtures/mock/github_following.json')
-      # stub_request(:get, "https://api.github.com/user/following").with(
-      #       headers: {
-      #   	  'Accept'=>'*/*',
-      #   	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-      #   	  'Authorization'=>'Basic YnJpYW4tZ3JlZXNvbjphMDczZDg3MjE1MjhhZDBmYmE5MTI2YzRlZTI4NTRhZDAxYzg4ZGRi',
-      #   	  'User-Agent'=>'Faraday v1.0.1'
-      #       }).
-      #     to_return(status: 200, body: response_body, headers: {})
-
       user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0, github_token: ENV['GITHUB_TOKEN'], github_username: ENV['GITHUB_USERNAME'])
       expect(user.github_following[0].class).to eq(GithubUser)
+    end
 
+    it "friendable_user?" do
+      gh_user1 = GithubUser.new({login: Faker::Games::HalfLife.character })
+      gh_user2 = GithubUser.new({login: Faker::Games::HalfLife.character })
+      gh_user3 = GithubUser.new({login: Faker::Games::HalfLife.character })
+      user1 = create(:user, github_username: gh_user1.name)
+      user2 = create(:user, github_username: gh_user2.name)
+      user3 = create(:user, github_username: nil)
+
+      expect(user1.friendable_user?(gh_user2)).to eq(true)
+      expect(user1.friendable_user?(gh_user3)).to eq(false)
     end
   end
 end
