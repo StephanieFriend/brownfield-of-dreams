@@ -14,22 +14,25 @@ class User < ApplicationRecord
 
   def github_repos(limit = nil)
     json = GithubService.new.repos(github_username, github_token)
-    repo_objects = json.map {|repo_detail| Repo.new(repo_detail)}
+    repo_objects = json.map { |repo_detail| Repo.new(repo_detail) }
     limit ? repo_objects.take(limit) : repo_objects
   end
 
   def github_followers
     json = GithubService.new.followers(github_username, github_token)
-    json.map {|user_detail| GithubUser.new(user_detail)}
+    json.map { |user_detail| GithubUser.new(user_detail) }
   end
 
   def github_following
     json = GithubService.new.following(github_username, github_token)
-    json.map {|user_detail| GithubUser.new(user_detail)}
+    json.map { |user_detail| GithubUser.new(user_detail) }
   end
 
   def friendable_user?(github_user)
-    return false unless user_to_friend = User.find_by(github_username: github_user.name)
-    friends.exclude?(user_to_friend) 
+    unless (user_to_friend = User.find_by(github_username: github_user.name))
+      return false
+    end
+
+    friends.exclude?(user_to_friend)
   end
 end

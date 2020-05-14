@@ -7,7 +7,7 @@ class TutorialsController < ApplicationController
 
   def message
     tutorial = Tutorial.find(params[:id])
-    flash[:notice] = "You must be logged in to bookmark videos."
+    flash[:notice] = 'You must be logged in to bookmark videos.'
     redirect_to tutorial_path(tutorial)
   end
 end
